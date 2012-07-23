@@ -5,42 +5,54 @@
 
 package institutobenedicto;
 
-
-import java.sql.Date;
-
-
 /**
  *
  * @author CARLOS
  */
-public class Venta {
+public class Compra {
+private String concepto;
+private String numero;
+private String fechaemision;
+private String empresa;
+private String fechapago;
+private String fechavencimiento;
+private String estado;
+private String observaciones;
+private Double subtotal;
+private Double total;
+private Double igv;
+private String moneda;
 
-    private String concepto;
-    private String numero;
-    private String fechaemision;
-    private String empresa;
-    private String fechavencimiento;
-    private String fechapago;
-    private String estado;
-    private Double subtotal;
-    private double igv;
-    private String moneda;
-    private Double total;
+public Compra(String concepto,String numero ,String fechaemision,String empresa,String fechapago,String fechavencimiento,String estado,String observaciones,Double subtotal,String moneda){
+    this.concepto=concepto;
+    this.numero=numero;
+    this.fechavencimiento=fechavencimiento;
+    this.empresa=empresa;
+    this.fechapago=fechapago;
+    this.fechaemision=fechaemision;
+    this.estado=estado;
+    this.observaciones=observaciones;
+    this.moneda=moneda;
+    this.subtotal=subtotal;
+    calcularigv();
+    calculatotal();
 
+}
 
-    public Venta(String concepto,String numero,String fechaemision, String empresa, String fechavencimiento, String fechapago, String estado,Double subtotal,String moneda){
-        this.concepto=concepto;
-        this.numero=numero;
-        this.fechaemision=fechaemision;
-        this.empresa=empresa;
-        this.fechavencimiento=fechavencimiento;
-        this.fechapago=fechapago;
-        this.estado=estado;
+    public double getSubtotal(){
+        return subtotal;
+    }
+
+    private void setSubtotal(Double subtotal){
         this.subtotal=subtotal;
+    }
+
+    public String getMoneda(){
+        return moneda;
+    }
+
+    public void setMoneda(String moneda){
         this.moneda=moneda;
-        calculaigv();
-        calculartotal();
-        
     }
 
     public String getConcepto() {
@@ -98,21 +110,12 @@ public class Venta {
     public void setNumero(String numero) {
         this.numero = numero;
     }
+    public String getObservaciones(){
+        return observaciones;
 
-    private Double getSubtotal(){
-        return subtotal;
     }
-
-    private void setSubtotal(Double subtotal){
-        this.subtotal=subtotal;
-    }
-
-    public String getMoneda(){
-        return moneda;
-    }
-
-    private void setMoneda(String moneda){
-        this.moneda=moneda;
+    public void setObservaciones(String observaciones){
+        this.observaciones=observaciones;
     }
 
     public Double getIgv(){
@@ -122,12 +125,13 @@ public class Venta {
     public Double getTotal(){
         return total;
     }
-    
-    private void calculaigv(){
-        this.igv=subtotal * 0.18;
-}
-    private void calculartotal(){
-        this.total=this.igv+ this.subtotal;
-}
 
+    private void calcularigv(){
+        this.igv=this.subtotal * 0.18;
+    }
+
+    private void calculatotal(){
+        this.total=this.igv + this.subtotal;
+
+    }
 }
