@@ -5,6 +5,7 @@
 
 package institutobenedicto;
 
+import java.util.Locale;
 import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -20,12 +21,9 @@ public class prospectoTest {
 prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc.edu.pe",42852817,987654321);
 
 
-    public prospectoTest() {
-    }
-
     @Test
     public void DarDeAltaProspecto(){
-        prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc.edu.pe",42852817,987654321);
+        prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc.edu.pe",42852818,987654321);
         
         if(11111112 == prospecto.getDni()){
         System.out.println("El prospecto ya existe,no se puede dar de alta");}
@@ -35,15 +33,20 @@ prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc
         Assert.assertNotNull(prospecto.getMaterno());
         Assert.assertNotNull(prospecto.getEmail());
         Assert.assertNotNull(prospecto.getTelefono());
+        System.out.println("El prospecto fue dado de alta");
         
         
     }
     
     @Test
-    public void BuscarProspecto(){
-        prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc.edu.pe",42852818,987654321);
-        Assert.assertEquals(42852817,prospecto.getFiltro());
-
+    public void BuscarProspectoPorDNI(){
+        
+        if (prospecto.getFiltro() == prospecto.getDni()){
+            System.out.println("El prospecto fue encontrado");}
+            else 
+        
+        System.out.println("El prospecto no fue encontrado");
+       
     }
 
     @Test
@@ -55,6 +58,7 @@ prospecto prospecto = new prospecto("Gerardo","Cotrina","Leguia","u201202517@upc
         Assert.assertNotNull(prospecto.getEmail());
         Assert.assertNotNull(prospecto.getDni());
         Assert.assertNotNull(prospecto.getTelefono());
+        System.out.println("El prospecto ha sido dado de baja");
 
 
     }
