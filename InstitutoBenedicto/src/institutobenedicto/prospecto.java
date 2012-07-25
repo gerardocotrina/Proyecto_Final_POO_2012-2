@@ -27,7 +27,6 @@ public class prospecto {
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
-        
 
 }
 
@@ -36,7 +35,7 @@ public class prospecto {
     }
 
     public void setDni(int dni) {
-        this.dni = 11111112;
+        this.dni = dni;
     }
 
     public String getEmail() {
@@ -79,11 +78,8 @@ public class prospecto {
         this.telefono = telefono;
     }
 
-    public void setFiltro(int filtro) {
-        this.filtro = filtro;
-    }
     public int getFiltro(){
-        return filtro = 11111112;
+        return filtro = 42852817;
 
 
     }
