@@ -5,6 +5,7 @@
 
 package institutobenedicto;
 
+import java.util.Date;
 import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -23,18 +24,27 @@ public class UsuarioTest {
     @Test
 
     public void validausuario(){
-        Usuario usu = new Usuario("chuamani","1234560","01");
+        Date hoy=new Date();
 
-        Assert.assertEquals(usu.getNombreusuario(), "chuamani");
-        
-    }
+        Usuario usu = new Usuario("Carlos","Huamani","42356082","chuamanirojas@gmail.com",hoy.toString(),"estudiante","chuamani","1234560","01");
+            String usuarioesperado="";
+            String claveesperada="";
 
-    @Test
-    public void validaclave(){
-        Usuario usu = new Usuario("chuamani","1234560","01");
-        Assert.assertEquals(usu.getClave(), "1234560");
-       
-    }
+usu.ValidaUsuarioNulo(usuarioesperado);
+usu.ValidaClaveNula(claveesperada);
+
+        if ((usu.getNombreusuario()== usuarioesperado)  && (usu.getClave()==claveesperada)){
+                 System.out.println("Usuario validado ");
+            }
+        else
+        {
+            System.out.println("Usuario o contraseña incorrecta ");
+        }
+
+         
+        }
+
+
 
     
 }

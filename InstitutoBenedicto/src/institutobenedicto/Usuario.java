@@ -10,15 +10,45 @@ package institutobenedicto;
  * @author CARLOS
  */
 public class Usuario {
+    private String nombre;
+    private String apellidos;
+    private String dni;
+    private String email;
+    private String fechaingreso ;
+    private String cargo;
     private String nombreusuario;
     private String clave;
     private String codigoRol;
 
-    public Usuario (String nombreusuario,String clave,String codigoRol){
-        this.nombreusuario=nombreusuario;
-        this.clave=clave;
-        this.codigoRol=codigoRol;
+    public Usuario(String nombre, String apellidos, String dni, String email, String fechaingreso, String cargo, String nombreusuario, String clave, String codigoRol) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.email = email;
+        this.fechaingreso = fechaingreso;
+        this.cargo = cargo;
+        this.nombreusuario = nombreusuario;
+        this.clave = clave;
+        this.codigoRol = codigoRol;
+    }
 
+    public Usuario() {
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public String getClave() {
@@ -37,6 +67,38 @@ public class Usuario {
         this.codigoRol = codigoRol;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFechaingreso() {
+        return fechaingreso;
+    }
+
+    public void setFechaingreso(String fechaingreso) {
+        this.fechaingreso = fechaingreso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getNombreusuario() {
         return nombreusuario;
     }
@@ -45,6 +107,22 @@ public class Usuario {
         this.nombreusuario = nombreusuario;
     }
 
+ 
+public void ValidaUsuarioNulo(String usuarioesperado){
+    if (usuarioesperado==""){
+         System.out.println("Ingrese su usuario ");
+
+    }
+
+
+
+}
+     public void ValidaClaveNula(String claveesperada){
+           if (claveesperada==""){
+         System.out.println("Ingrese su clave");
+
+    }
+    }
     
 
 }
