@@ -43,7 +43,7 @@ public class Clientes_finalTest {
     @Test 
             public void buscarclientes (){
         
-     altaclientes nombre2=new altaclientes("frank", "maura", "arias", "frank@gmail.com", 46464646, 838383838, "22/10/2012");  
+     Clientes nombre2=new Clientes("frank", "maura", "arias", "frank@gmail.com", 46464646, 838383838, "22/10/2012");  
 
      int dni2=46464646;   
      int dni3=46464647;   
