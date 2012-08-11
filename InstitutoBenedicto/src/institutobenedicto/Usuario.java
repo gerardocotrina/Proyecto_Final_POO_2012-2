@@ -40,7 +40,7 @@ public class Usuario {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        this.apellidos = null;
     }
 
     public String getCargo() {
@@ -123,6 +123,19 @@ public void ValidaUsuarioNulo(String usuarioesperado){
 
     }
     }
-    
+
+     public void ValidaUsuario(String validausuario){
+         int transacciones = 1;
+    if (transacciones>0){
+        System.out.println("usuario activo, no se puede eliminar");}
+        else
+            System.out.println("usuario inactivo, se procede a eliminar");
+
+
+    }
+
+
 
 }
+    
+
